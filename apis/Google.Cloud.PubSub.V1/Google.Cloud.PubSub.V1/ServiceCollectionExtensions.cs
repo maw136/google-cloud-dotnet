@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-// https://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -129,7 +129,6 @@ public static partial class ServiceCollectionExtensions
         return services.AddSubscriberClient((_, builder) => builder.SubscriptionName = subscriptionName);
     }
 
-#if NET8_0_OR_GREATER
     /// <summary>
     /// Adds a singleton <see cref="PublisherClient"/> to the <see cref="IServiceCollection"/> as customized by the <paramref name="action"/>.
     /// </summary>
@@ -241,5 +240,4 @@ public static partial class ServiceCollectionExtensions
         GaxPreconditions.CheckNotNull(subscriptionName, nameof(subscriptionName));
         return services.AddKeyedSubscriberClient(serviceKey, (_, _, builder) => builder.SubscriptionName = subscriptionName);
     }
-#endif
 }

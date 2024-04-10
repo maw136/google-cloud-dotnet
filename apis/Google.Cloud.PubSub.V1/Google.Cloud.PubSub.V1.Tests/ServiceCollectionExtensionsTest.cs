@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-// https://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,7 +62,6 @@ public class ServiceCollectionExtensionsTest
         Assert.Equal(topicName, client.TopicName);
     }
 
-#if NET8_0_OR_GREATER
     [Fact]
     public void AddKeyedPublisherClient_WithAction()
     {
@@ -83,7 +82,6 @@ public class ServiceCollectionExtensionsTest
         Assert.NotNull(keyedClient);
         Assert.Equal(topicName, keyedClient.TopicName);
     }
-#endif
 
     [Fact]
     public void AddPublisherClient_WithAction_NoTopicName()
@@ -172,7 +170,6 @@ public class ServiceCollectionExtensionsTest
         Assert.Equal(subscriptionName, client.SubscriptionName);
     }
 
-#if NET8_0_OR_GREATER
     [Fact]
     public void AddKeyedSubscriberClient_WithAction()
     {
@@ -193,7 +190,6 @@ public class ServiceCollectionExtensionsTest
         Assert.NotNull(keyedClient);
         Assert.Equal(subscriptionName, keyedClient.SubscriptionName);
     }
-#endif
 
     [Fact]
     public void AddSubscriberClient_WithAction_NoSubscriptionName()
